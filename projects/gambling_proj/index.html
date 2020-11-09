@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Thiti (Nob) Premrudeepreechacharn | blank</title>
+<title>Thiti (Nob) Premrudeepreechacharn | Gambling Disorder Model</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/gambling_proj/">
 
 <!-- Theming-->
 
@@ -74,7 +74,7 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
               
@@ -133,24 +133,40 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>Journal</h1>
-    <h2>Log of my journey, intellectual and whatnot.</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Gambling Disorder Model</h1>
+    <p class="post-description">Project on causal modeling for 'Near-Miss Effect' in Gambling Disorder</p>
+  </header>
+
+  <article>
+    <h3 id="tldr">TL;DR</h3>
+
+<ul>
+  <li>A class project while I was at ETH Zürich on causal modeling of an effect in gambling disorder</li>
+  <li>Near-miss effect happens when you miss the jackpot by a little, and feel tempted to replay the game</li>
+  <li>Using MATLAB, we plotted out the neuronal activity and BOLD signal change to visualize effects in each brain area</li>
+  <li><a href="https://www.tnu.ethz.ch/en/team/faculty-and-scientific-staff/stephan#c333">Dr.Stephan</a> gave us useful insights to reconsider the choice of some brain areas, along with the possibility of noisiness in the area, and to focus more on practicality of implementing the model to real world application</li>
+</ul>
+
+<hr />
+
+<p>As gambling is a category of activities that involves putting in money on an event with an uncertain outcome, with the primary intent of winning money or material goods, one would enjoy the activity responsibly as a recreational acitivity [1]. However, if one became obsessed with it, there can be problems caused by the activity, both incurred on them and potentially their family.</p>
+
+<p>Pathological gamblers has these gambling problems such that they ignored the overall cumulative expected negative outcome of the game, and is enhanced by the biased processing of the chance, which in this case is the <code class="language-plaintext highlighter-rouge">'near-miss loss'</code> (NMs), feeling of being close to a win in electronic gambling machines such as slot machines [2,3]. As shown in figure 1, the slot machine reel outputs the first two consequential as being the same, and the last one being different, making an individual feel tempted, or reinforced, to play more.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/gambling_2.jpg" alt="" title="Near-Miss effect in slot machines" />
+    </div>
+</div>
+<div class="caption">
+    Figure 1: Win and Near-Miss Loss Outcomes in Three-Reel Slot Machine
+</div>
+
+<p>With this understanding, we have used dynamic causal modeling</p>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/comingsoon/">Coming soon!</a></h3>
-        <p class="post-meta">November 9, 2020</p>
-        <p>Interesting things coming soon!</p>
-      </li>
-    
-  </ul>
-
-  
-
+  </article>
 
 </div>
 
