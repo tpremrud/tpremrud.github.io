@@ -52,7 +52,7 @@
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
     <div class="container">
       
-      <a class="navbar-brand title font-weight-lighter" href="/">
+      <a class="navbar-brand title font-weight-lighter" href="http://localhost:4000/">
        <span class="font-weight-bold">Thiti</span> (Nob)  Premrudeepreechacharn
       </a>
       
@@ -102,24 +102,6 @@
           
           
           
-          <li class="nav-item ">
-              <a class="nav-link" href="/publications/">
-                publications
-                
-              </a>
-          </li>
-          
-          
-          
-          <li class="nav-item ">
-              <a class="nav-link" href="/teaching/">
-                teaching
-                
-              </a>
-          </li>
-          
-          
-          
         </ul>
       </div>
     </div>
@@ -142,17 +124,18 @@
     <h3 id="tldr">TL;DR</h3>
 
 <ul>
-  <li>A class project while I was at ETH Zürich on causal modeling of an effect in gambling disorder</li>
+  <li>A <strong>class project</strong> while I was studying abroad at <strong>ETH Zürich</strong> on causal modeling of an effect in gambling disorder</li>
   <li>Near-miss effect happens when you miss the jackpot by a little, and feel tempted to replay the game</li>
   <li>Using MATLAB, we plotted out the neuronal activity and BOLD signal change to visualize effects in each brain area</li>
-  <li><a href="https://www.tnu.ethz.ch/en/team/faculty-and-scientific-staff/stephan#c333">Dr.Stephan</a> gave us useful insights to reconsider the choice of some brain areas, along with the possibility of noisiness in the area, and to focus more on practicality of implementing the model to real world application</li>
+  <li><a href="/assets/pdf/Translational_Neuromodeling_Project_Report.pdf">Paper</a></li>
+  <li><a href="https://github.com/tpremrud/TN_NearMissEffect_DCM">GitHub Repo</a></li>
 </ul>
 
 <hr />
 
-<p>As gambling is a category of activities that involves putting in money on an event with an uncertain outcome, with the primary intent of winning money or material goods, one would enjoy the activity responsibly as a recreational acitivity [1]. However, if one became obsessed with it, there can be problems caused by the activity, both incurred on them and potentially their family.</p>
+<p>As gambling is a category of activities that involves putting in money on an event with an uncertain outcome, with the primary intent of winning money or material goods, one would enjoy the activity responsibly as a recreational acitivity. However, if one became obsessed with it, there can be problems caused by the activity, both incurred on them and potentially their family.</p>
 
-<p>Pathological gamblers has these gambling problems such that they ignored the overall cumulative expected negative outcome of the game, and is enhanced by the biased processing of the chance, which in this case is the <code class="language-plaintext highlighter-rouge">'near-miss loss'</code> (NMs), feeling of being close to a win in electronic gambling machines such as slot machines [2,3]. As shown in figure 1, the slot machine reel outputs the first two consequential as being the same, and the last one being different, making an individual feel tempted, or reinforced, to play more.</p>
+<p>Pathological gamblers has these gambling problems such that they ignored the overall cumulative expected negative outcome of the game, and is enhanced by the biased processing of the chance, which in this case is the <strong>‘near-miss loss’</strong> (NMs), feeling of being close to a win in electronic gambling machines such as slot machines. In addition, we are discussing the sequential near-miss loss (i.e. A-A-B), which has a stronger effect than that of the non-sequential near-miss loss (i.e. A-B-A) As shown in figure 1, the slot machine reel outputs the first two consequential as being the same, and the last one being different, making an individual feel tempted, or reinforced, to play more.</p>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -163,8 +146,50 @@
     Figure 1: Win and Near-Miss Loss Outcomes in Three-Reel Slot Machine
 </div>
 
-<p>With this understanding, we have used dynamic causal modeling</p>
+<p>With this understanding, we have used <strong>dynamic causal modeling</strong> to propose a causal model of this effect being presented in ones with gambling disorder. First of all, we identified potential brain areas that are relevant to processing gambling results (i.e. visual sensory processing and reward computation), in addition to all of them having found to be connected to each other. Figure 2 visualizes the process by having sensory input, visual stimuli in this case, be the beginning of the process into the superior colliculus (SC), which then projects to substantia nigra (SN). After that, it projects to both ventral striatum and insula, which also projects to ventral striatum. Moreover, the gambling severity, having gambling disorders or not, and the result outcome of the game, near-miss or not, will modulate the endogenous connectivity between brain areas as shown in figure 2.</p>
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/gambling_1.jpg" alt="" title="Proposed Model of Causal Connectivity" />
+    </div>
+</div>
+<div class="caption">
+    Figure 2: Proposed Model of Causal Connectivity
+</div>
+
+<p>To visualize the process using an analogy, we can think of the sensory input as the input of a function, the brain areas as a variable or an equation, and the modulatory inputs as the manipulation of the variable such as scaling or shifting.</p>
+
+<p>Then having assumed this is a bilinear model due to the lack of nonlinear components we put the differential equations and matrices relevant to the model, which was given in the class, in our MATLAB code for simulating the neuronal activity of the model.</p>
+
+<p>With that, as blood flows in the brain when there is an activity in that region, we can say that having blood in an area could be related to the neuronal states of that specific region, and so we used <strong>Blood-Oxygen-Level-Dependent (BOLD)</strong> signal change to capture this mechanism. The BOLD signal change could be captured by differential equations defining the hemodynamic update.</p>
+
+<p>All these update equations from both neuronal activity and BOLD signal change are being implemented by Euler integration in MATLAB, which we utilized for loops, in this case.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/gambling_3.jpg" alt="" title="Neuronal Activity and BOLD Signal Change Outputs" />
+    </div>
+</div>
+<div class="caption">
+    Figure 3: Neuronal Activity and BOLD Signal Change Outputs
+</div>
+
+<p>By dividing sensory inputs into intervals with 6 seconds of separation between each cases which has their own time block of getting 4 sensory inputs, we have obtained the results of the simulation shown in figure 3. With <strong>WIN</strong> indicating the result of winning the game, <strong>LOSS</strong> indicating full-miss loss, or that the player did not get anything similar to each other at all, and <strong>NEAR MISS</strong> denoting a sequential near-miss case, we can observe that near miss situation makes both the neural activity and BOLD signal to be elevated almost equivalent to win situation.</p>
+
+<p>This presents possibilities in clinical applications for diagnosing the individuals with gambling disorders through gambling tasks being done during an fMRI scan. However, as this is just a computational model without any verification of the model through clinical studies, one should not utilize this model as a benchmark, but rather a motivation for initiating research on the topic.</p>
+
+<hr />
+<h3 id="notes-from-drstephan-instructor">Notes from <a href="https://www.tnu.ethz.ch/en/team/faculty-and-scientific-staff/stephan#c333">Dr.Stephan</a> (Instructor)</h3>
+<ul>
+  <li>We need to consider more on the type of visual input we are talking about, since SC identify motions of the object and not the features or types of the object.</li>
+  <li>Practicality of implementing the model to real world application is also a point to be considered since the region we are interested in might be embedded deep into the brain, thus a lot of noise will be associated with the measurement.</li>
+</ul>
+
+<h3 id="reflection-and-possible-future-directions">Reflection and possible future directions</h3>
+<ul>
+  <li>Revisit the brain anatomy on which area does what</li>
+  <li>Ideally, the application based on this understanding might be a <strong>phone application</strong>, which could alleviate the severity of the condition, through the mechanism of the game, which I imagine the overall mechanism to be like how smokers quit smoking cigarette</li>
+</ul>
 
   </article>
 
@@ -181,7 +206,7 @@
     Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
     
-    Last updated: November 09, 2020.
+    Last updated: December 03, 2020.
     
   </div>
 </footer>
