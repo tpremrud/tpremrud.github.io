@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Thiti (Nob) Premrudeepreechacharn | Plug-and-Play ADMM on Image Super Resolution Problem</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/projects/plug_n_play/">
+
+<!-- Theming-->
+
+
+    
+<!-- MathJax -->
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="http://localhost:4000/">
+       <span class="font-weight-bold">Thiti</span> (Nob)  Premrudeepreechacharn
+      </a>
+      
+      <!-- Navbar Toogle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/projects/">
+                projects
+                
+              </a>
+          </li>
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Plug-and-Play ADMM on Image Super Resolution Problem</h1>
+    <p class="post-description">Project on testing performance of Image Super Resolution Problem using various denoisers as the variable of interest</p>
+  </header>
+
+  <article>
+    <h3 id="tldr">TL;DR</h3>
+
+<ul>
+  <li>A <strong>class project</strong> in a graduate <a href="https://engineering.purdue.edu/ChanGroup/ECE595/index.html">Machine Learning</a> class</li>
+  <li>Using MATLAB, we tackled the inverse problem of solving the image super resolution (SR) problem via plugging in different denoisers to see if the denoising performance causally affects the SR results, measured with PSNR.</li>
+  <li>After testing with various state of the art denoisers, we found that a uniformly superior denoiser does not strictly imply a stronger candidate of a denoiser to be plugged into the ADMM algorithm, due to the contradiction of results of FFDNet being positively correlated and DnCNN being vague.</li>
+  <li><a href="https://drive.google.com/drive/folders/1v-Ie1UBcufWNy8-ozMcKi7W2I4nDWFnA?usp=sharing">Google Drive for all codes, figures, and data</a></li>
+  <li><a href="/assets/pdf/tpremrud_ECE595ML_Proj.pdf">Paper</a></li>
+</ul>
+
+<hr />
+
+<p>Given an observed degraded image, we would like to find the true image which is also being further corrupted with noise, assuming it is a additive white gaussian noise (AWGN). This task of recovering the true image is an inverse problem of image restoration, which in this case we are considering a subset of that, called Image Super Resolution (SR) problem. The problem aims to increase the resolution of an image which this can be understood as a maximum-a-posteriori (MAP) estimation problem. Then, we can use the scheme that make an unconstrained optimization problem to be reformulated as a constrained one which is a technique called Alternating Direction Method of Multiplier (ADMM).</p>
+
+<p>The process of converting the unconstrained optimization problem into a constrained one splits the problem into subproblems which could be more optimally solved. With some assumptions such as likelihood and prior requirements of being closed, proper, and convex, so that they can guarantee convergence of the subproblems. Then, we can look at the star of the show, Plug-and-Play ADMM (PnP) framework, which is basically replacing one of the subproblems, specifically the part that deals with the prior of the model, with the off-the-shelf image denoisers. This stems from the fact that the update of an intermediate variable is trying to minimize the residue between the clean image and another temporary variable via the use of prior. From that, Venkatakrishnan et al. has proposed that this subproblem can be simplified further as just using the denoiser by injecting in the temporary variable to get the updated intermediate variable. Note that this framework has had many variations which each of them having their own pros and cons.</p>
+
+<p>By modeling the image SR task with a forward model (likelihood) consisting of two operations: an anti-aliasing filter and a sub-sampling process, we can then attempt to solve this inverse problem by using PnP algorithm below:</p>
+
+<div class="row" style="text-align: center;">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/PnP_fig1.jpg" alt="" title="Plug-and-Play ADMM Algorithm with Adaptive Update" />
+    </div>
+</div>
+<div class="caption">
+    Figure 1: PnP ADMM Algorithm with Adaptive Update Rule
+</div>
+
+<p>Then, we used the MATLAB toolbox originally from <a href="https://www.mathworks.com/matlabcentral/fileexchange/60641-plug-and-play-admm-for-image-restoration">Stanley Chan</a>, who is the professor teaching the course, to run through the overall PnP framework. However, before getting to test different denoisers as a variable of interest on the SR performance, one could see the need of testing or validating the denoising performance of the denoisers in order to proceed, which we had done by adding the AWGN to the standard test images from the Set12 dataset, and apply various state of the art denoisers, in this case are Recursive Filter (RF), Non-local Means (NLM), Block-matching and 3D Filtering (BM3D), Total Variation (TV), Deep Convolutional Neural Network (DnCNN), and Fast and Flexible Denoising Convolutional Neural Network (FFDNet). The denoising performance is being measured via PSNR in dB with respect to different noise levels, shown below in Figure 2.</p>
+
+<div class="row" style="text-align: center;">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/PnP_fig2.jpg" alt="" title="Denoising Performance at Various Noise Levels" />
+    </div>
+</div>
+<div class="caption">
+    Figure 2: Denoising Performance at Various Noise Levels
+</div>
+
+<p>One can see that the DnCNN and FFDNet performs uniformly better than other denoisers, and based on our hypothesis, we posit that both of these denoisers would outputs better SR performance than that of other denoisers. However, one will see in Figure 3 and 4 below that the SR performance of noisy image has the same trajectory as that of the denoising performance alone in Figure 2, but the SR performance is not uniform, unlike the denoising task. Specifically, Figure 4 shows that the BM3D denoiser performs better at lower noise levels, but the FFDNet performs better at the higher noise levels, which brings us back to Figure 2 such that the relationship in denoising task seems to be the same, although the discrepancy in lower noise levels are almost indiscriminable. Note that the red trace depicts the monotone update of the hyperparameter configuration, blue trace depicts the original PnP scheme, and black curve depicts the adaptive update scheme which is precisely the algorithm shown in Figure 1.</p>
+
+<div class="row" style="text-align: center;">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/PnP_fig3.jpg" alt="" title="SR Performance at Various Noise Levels" />
+    </div>
+</div>
+<div class="caption">
+    Figure 3: SR Performance at Various Noise Levels
+</div>
+
+<div class="row" style="text-align: center;">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/PnP_fig4.jpg" alt="" title="SR Performance of BM3D versus FFDNet at Various Noise Levels and Configurations" />
+    </div>
+</div>
+<div class="caption">
+    Figure 4: SR Performance of BM3D versus FFDNet at Various Noise Levels and Configurations
+</div>
+
+<hr />
+<h3 id="conclusion-and-possible-future-directions">Conclusion and Possible Future Directions</h3>
+<p>From this, we have come to a conclusion that the uniformly superior denoiser does not strictly imply a stronger candidate of a denoiser to be plugged into the ADMM algorithm. However, one must note that there is a room for improvement in terms of amount of data being used, even though we have used a standard image dataset, the number of image being used in the quantitative experiment is considerably low, 10. Also, if the denoiser is in MATLAB code, one could try plugging in more advanced and recent state of the art denoisers to verify our results.</p>
+
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2022 Thiti (Nob) Premrudeepreechacharn.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+
+    
+    Last updated: March 23, 2022.
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+<!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+</html>
