@@ -133,7 +133,7 @@
 
 <p>In addition to the similarities, the models and simulation results were used to explore the possible explanations for mechanism of dopamine-associated mental disorders, which are drug addiction, gambling addiction and Parkinson’s disease.</p>
 
-<p>Before getting into the distributional reinforcement learning (DistRL) paradigm, one must be comfortable with how traditional RL works, and how the processes resembles that of a neural reward system. For traditional RL, temporal difference (TD) learning algorithm is widely used for estimating the value of each stimulus, which could produce positive or negative reward, in order to achieve the goal of maximizing the long-term reward. From that, one could see the resemblance between that and actor-critic methods, which has two main components. First, there is an actor which its role is to execute actions that maximize the rewards</p>
+<p>Before getting into the distributional reinforcement learning (DistRL) paradigm, one must be comfortable with how traditional RL works, and how the processes resembles that of a neural reward system. For traditional RL, temporal difference (TD) learning algorithm is widely used for estimating the value of each stimulus, which could produce positive or negative reward, in order to achieve the goal of maximizing the long-term reward. From that, one could see the resemblance between that and actor-critic methods, which has two main components. First, there is an actor which its role is to execute actions that maximize the rewards. Then, the critic inform if the actor’s action is good or not, and whether it should adjust its action or not. Thus, this results in a loop of acting and optimising the action, in other words, they learn their decision policy directly alongside their value function, mutually optimising both.</p>
 
 <p>From that, people have made attempts to optimize the traditional RL by extending its components, thus its potential. Normally, one would estimate single expected values from a given stimulus, but with a class of summary statistics generalising the expected value, or expectiles, we can now estimate a set of statistics of the reward distribution. To elucidate, expectiles are considered as asymmetric version of expected value, with various degrees of pessimism (asymmetry parameter less than 0.5) and optimism (asymmetry parameter more than 0.5). Then, being able to retrieve the distribution open many doors for exploring how abnormal asymmetries could result in aberrant reward processing system of the computational agent.</p>
 
@@ -158,11 +158,11 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2021 Thiti (Nob) Premrudeepreechacharn.
+    &copy; Copyright 2022 Thiti (Nob) Premrudeepreechacharn.
     Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
     
-    Last updated: December 26, 2021.
+    Last updated: March 23, 2022.
     
   </div>
 </footer>
